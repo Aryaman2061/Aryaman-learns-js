@@ -45,7 +45,16 @@
 const hogwarts = new Object()
 hogwarts.grounds={hagrid: "massive",sprout: "scream"}
 hogwarts.forbiddenForest={spiders: "giant", centaur: "horse man"}
-hogwarts.castle={headmaster: 'Dumbleedoor', towers: {gryffindor: "top-right", slytherin: "bottom"}, classes: {dungeons: "dark", corridors: 'light'}}
+hogwarts.castle={
+    headmaster: 'Dumbleedoor', 
+    towers: {gryffindor: "top-right", slytherin: "bottom"}, 
+    classes: {dungeons: "dark", 
+        corridors: 'light',
+    },
+    message: function(){
+        console.log(`${this.headmaster} good morning`)
+    }
+}
 hogwarts[Symbol('harry')]='hii'
     // console.log(hogwarts.grounds.hagrid);
 const dumstrang = {1: 'krum', 2:'karkaroff'}
@@ -57,8 +66,9 @@ const allSchools = {...hogwarts,dumstrang,...beuxbaton}
     // console.log(Object.entries(hogwarts))
     // console.log(Object.keys(hogwarts))
 
-// De-structuring
-const {headmaster} = hogwarts.castle
-console.log(headmaster);
-const {gryffindor: head,slytherin: tail} = hogwarts.castle.towers
-console.log(tail)
+// // De-structuring
+// const {headmaster} = hogwarts.castle
+// console.log(headmaster);
+// const {gryffindor: head,slytherin: tail} = hogwarts.castle.towers
+// console.log(tail)
+hogwarts.castle.message()
