@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS ka ek aur tutorial</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    document.querySelector('#start').addEventListener('click',function(e){
+        const changeColors = setInterval(function(){
+            const col=document.body.style.backgroundColor
+            document.body.style.backgroundColor =
+            col == "rgb(33, 33, 33)" ? "white" : "#212121";
+            document.body.style.color =
+            col == "rgb(33, 33, 33)" ? "#212121" : "white";
+        }, 1000);
+        // OR
+        // let isBlack=false
+        // const changeColors2 = setInterval(function(){
+        //     if(isBlack){
+        //         document.body.style.backgroundColor='white'
+        //         document.body.style.color='#212121'
+        //         isBlack=false
+        //     } 
+        //     else{
+        //         document.body.style.backgroundColor='#212121'
+        //         document.body.style.color='white'
+        //         isBlack=true
+        //     }
+        // }, 1000);
+
+        let num=1
+        const nums = setInterval(() => {
+            document.querySelector('h1').innerHTML+=` ${num}`
+            num+=1
+        }, 1000);
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(changeColors)
+            clearInterval(nums)
+            console.log(`stopped at: ${num-1}`)
+        })
+    })
+    
+
+</script>
+</html>
